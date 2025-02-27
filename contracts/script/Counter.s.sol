@@ -17,5 +17,9 @@ contract CounterScript is Script {
         vm.stopBroadcast();
 
         console.log("Counter deployed at", address(counter));
+
+        // Write address to file
+        string memory addressString = vm.toString(address(counter));
+        vm.writeFile("deployed-counter-address.txt", addressString);
     }
 }

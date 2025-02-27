@@ -1,0 +1,25 @@
+{
+  "name": "contracts",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "forge build",
+    "deploy": "forge script script/Counter.s.sol:CounterScript --rpc-url $RPC_URL --broadcast --verify -vvvv --sender $ETH_FROM --private-key $ETH_KEY",
+    "watch": "forge test --watch",
+    "watch:js": "node listen-events.js",
+    "watch:js:createspace": "node listen-createspace-events.js",
+    "send-userop": "node send-userop.js",
+    "send-createspace-userop": "node send-createspace-userop.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "viem": "^2.22.23"
+  },
+  "dependencies": {
+    "forge-std": "github:foundry-rs/forge-std#v1.9.5",
+    "permissionless": "^0.2.35"
+  }
+}
