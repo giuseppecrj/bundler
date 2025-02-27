@@ -15,5 +15,7 @@ contract CounterScript is Script {
         counter = new Counter();
 
         vm.stopBroadcast();
+
+        console.log("Counter deployed at", address(counter));
     }
 }
